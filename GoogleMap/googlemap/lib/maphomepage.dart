@@ -25,12 +25,12 @@ class _HomePageState extends State<HomePage> {
         children: [
           GoogleMap(
             initialCameraPosition:
-                const CameraPosition(target: customLocation, zoom: 12),
+                const CameraPosition(target: customLocation, zoom: 11.5),
             onMapCreated: (controller) {
               _mapController = controller;
               _customInfoWindowController.googleMapController = controller;
               addMarker('test', customLocation);
-              addMarker(
+              addMarker1(
                 'test1',
                 const LatLng(14.842100727754945, 120.83743481184958),
               );
@@ -56,6 +56,46 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
     );
+  }
+
+  addMarker1(String markerid, LatLng location) async {
+    var markerIcon = await BitmapDescriptor.fromAssetImage(
+        const ImageConfiguration(), 'assets/images/garahefoodpark.png');
+    var marker = Marker(
+        markerId: MarkerId(markerid),
+        position: location,
+        //infoWindow: const InfoWindow(
+        //  title: 'Title of Place',
+        // snippet: 'Description',
+        //),
+        icon: markerIcon,
+        onTap: () {
+          _customInfoWindowController.addInfoWindow!(
+            Container(
+              clipBehavior: Clip.antiAlias,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(24),
+              ),
+              child: Column(
+                children: [
+                  Image.asset(
+                    'assets/images/garahe.png',
+                    fit: BoxFit.cover,
+                  ),
+                  const Text(
+                    'Garaje Food Park',
+                    style: TextStyle(fontSize: 15),
+                  )
+                ],
+              ),
+            ),
+            location,
+          );
+        });
+
+    _markers[markerid] = marker;
+    setState(() {});
   }
 
   addMarker(String id, LatLng location) async {
