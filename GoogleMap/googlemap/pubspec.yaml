@@ -64,9 +64,26 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/foodpark1.png
-    - assets/images/SanMiguel.jpg
-    - assets/images/Crossroads.jpg
     - assets/images/garahefoodpark.png
+    - assets/images/Crossroadsfoodpark.png
+    - assets/images/sanmiguelfoodpark.png
+    - assets/images/pulilanfoodpark.png
+    - assets/images/muntingparaisofoodpark.png
+    - assets/images/sanmarcosfoodpark.png
+    - assets/images/sanmarcoswindow.jpg
+    - assets/images/sanmiguelwindow.jpg
+    - assets/images/pulilanwindow.jpg
+    - assets/images/muntingparaisowindow.jpg
+    - assets/images/crossroadswindow.jpg
+    - assets/images/garajewindow.jpg
+
+
+
+
+
+
+
+    
 
      
 

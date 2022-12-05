@@ -34,10 +34,23 @@ class _HomePageState extends State<HomePage> {
                 'test1',
                 const LatLng(14.842100727754945, 120.83743481184958),
               );
-              addMarker(
+              addMarker2(
                 'test2',
                 const LatLng(14.858096320640007, 120.74220251284042),
               );
+
+              addMarker3(
+                'test3',
+                const LatLng(14.910325002383217, 120.8469576064095),
+              );
+
+              addMarker4(
+                'test4',
+                const LatLng(14.80791402094921, 120.86976416153937),
+              );
+
+              addMarker5('test5',
+                  const LatLng(14.896344082681443, 120.77674251390367));
             },
             onTap: (location) {
               _customInfoWindowController.hideInfoWindow!();
@@ -49,13 +62,173 @@ class _HomePageState extends State<HomePage> {
           ),
           CustomInfoWindow(
             controller: _customInfoWindowController,
-            height: 150,
-            width: 200,
+            height: 250,
+            width: 300,
             offset: 50,
           )
         ],
       ),
     );
+  }
+
+  addMarker5(String markerid4, LatLng location) async {
+    var markerIcon = await BitmapDescriptor.fromAssetImage(
+        const ImageConfiguration(), 'assets/images/sanmarcosfoodpark.png');
+    var marker = Marker(
+        markerId: MarkerId(markerid4),
+        position: location,
+        //infoWindow: const InfoWindow(
+        //  title: 'Title of Place',
+        // snippet: 'Description',
+        //),
+        icon: markerIcon,
+        onTap: () {
+          _customInfoWindowController.addInfoWindow!(
+            Container(
+              clipBehavior: Clip.antiAlias,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(24),
+              ),
+              child: Column(
+                children: [
+                  Image.asset(
+                    'assets/images/sanmarcoswindow.jpg',
+                    fit: BoxFit.cover,
+                  ),
+                  const Text(
+                    'San Marcos Foodpark',
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+            ),
+            location,
+          );
+        });
+
+    _markers[markerid4] = marker;
+    setState(() {});
+  }
+
+  addMarker4(String markerid3, LatLng location) async {
+    var markerIcon = await BitmapDescriptor.fromAssetImage(
+        const ImageConfiguration(), 'assets/images/muntingparaisofoodpark.png');
+    var marker = Marker(
+        markerId: MarkerId(markerid3),
+        position: location,
+        //infoWindow: const InfoWindow(
+        //  title: 'Title of Place',
+        // snippet: 'Description',
+        //),
+        icon: markerIcon,
+        onTap: () {
+          _customInfoWindowController.addInfoWindow!(
+            Container(
+              clipBehavior: Clip.antiAlias,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(24),
+              ),
+              child: Column(
+                children: [
+                  Image.asset(
+                    'assets/images/muntingparaisowindow.jpg',
+                    fit: BoxFit.cover,
+                  ),
+                  const Text(
+                    'Munting Paraiso Foodpark',
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+            ),
+            location,
+          );
+        });
+
+    _markers[markerid3] = marker;
+    setState(() {});
+  }
+
+  addMarker3(String markerid2, LatLng location) async {
+    var markerIcon = await BitmapDescriptor.fromAssetImage(
+        const ImageConfiguration(), 'assets/images/pulilanfoodpark.png');
+    var marker = Marker(
+        markerId: MarkerId(markerid2),
+        position: location,
+        //infoWindow: const InfoWindow(
+        //  title: 'Title of Place',
+        // snippet: 'Description',
+        //),
+        icon: markerIcon,
+        onTap: () {
+          _customInfoWindowController.addInfoWindow!(
+            Container(
+              clipBehavior: Clip.antiAlias,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(24),
+              ),
+              child: Column(
+                children: [
+                  Image.asset(
+                    'assets/images/pulilanwindow.jpg',
+                    fit: BoxFit.cover,
+                  ),
+                  const Text(
+                    'The Mill: Pulilan Foodpark',
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+            ),
+            location,
+          );
+        });
+
+    _markers[markerid2] = marker;
+    setState(() {});
+  }
+
+  addMarker2(String markerid1, LatLng location) async {
+    var markerIcon = await BitmapDescriptor.fromAssetImage(
+        const ImageConfiguration(), 'assets/images/sanmiguelfoodpark.png');
+    var marker = Marker(
+        markerId: MarkerId(markerid1),
+        position: location,
+        //infoWindow: const InfoWindow(
+        //  title: 'Title of Place',
+        // snippet: 'Description',
+        //),
+        icon: markerIcon,
+        onTap: () {
+          _customInfoWindowController.addInfoWindow!(
+            Container(
+              clipBehavior: Clip.antiAlias,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(24),
+              ),
+              child: Column(
+                children: [
+                  Image.asset(
+                    'assets/images/sanmiguelwindow.jpg',
+                    fit: BoxFit.cover,
+                  ),
+                  const Text(
+                    'San Miguel Foodpark',
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+            ),
+            location,
+          );
+        });
+
+    _markers[markerid1] = marker;
+    setState(() {});
   }
 
   addMarker1(String markerid, LatLng location) async {
@@ -80,12 +253,12 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 children: [
                   Image.asset(
-                    'assets/images/garahe.png',
+                    'assets/images/garajewindow.jpg',
                     fit: BoxFit.cover,
                   ),
                   const Text(
-                    'Garaje Food Park',
-                    style: TextStyle(fontSize: 15),
+                    'Garaje Foodpark',
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                   )
                 ],
               ),
@@ -100,7 +273,7 @@ class _HomePageState extends State<HomePage> {
 
   addMarker(String id, LatLng location) async {
     var markerIcon = await BitmapDescriptor.fromAssetImage(
-        const ImageConfiguration(), 'assets/images/foodpark1.png');
+        const ImageConfiguration(), 'assets/images/Crossroadsfoodpark.png');
     var marker = Marker(
         markerId: MarkerId(id),
         position: location,
@@ -120,12 +293,12 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 children: [
                   Image.asset(
-                    'assets/images/Crossroads.jpg',
+                    'assets/images/crossroadswindow.jpg',
                     fit: BoxFit.cover,
                   ),
                   const Text(
-                    'Crossroads Food Park',
-                    style: TextStyle(fontSize: 15),
+                    'Crossroads Foodpark',
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                   )
                 ],
               ),
