@@ -1,5 +1,6 @@
 import 'package:custom_info_window/custom_info_window.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 const LatLng customLocation = LatLng(14.852885352588201, 120.81614049713285);
@@ -12,12 +13,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // ignore: unused_field
   late GoogleMapController _mapController;
   final Map<String, Marker> _markers = {};
   final _customInfoWindowController = CustomInfoWindowController();
 
-  //late String id;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,8 +61,8 @@ class _HomePageState extends State<HomePage> {
           ),
           CustomInfoWindow(
             controller: _customInfoWindowController,
-            height: 250,
-            width: 300,
+            height: 245,
+            width: 220,
             offset: 50,
           )
         ],
@@ -99,7 +98,32 @@ class _HomePageState extends State<HomePage> {
                   const Text(
                     'San Marcos Foodpark',
                     style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                  )
+                  ),
+                  const Text(
+                    'Address:',
+                    textAlign: TextAlign.right,
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 8.0, right: 8.0),
+                    child: Text(
+                      '13, R-9, Calumpit, Bulacan',
+                      style: TextStyle(fontSize: 11),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 5.0,
+                  ),
+                  const Text('Contact no: ',
+                      style:
+                          TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
+                  const Text('',
+                      style: TextStyle(
+                        fontSize: 11,
+                      ))
                 ],
               ),
             ),
@@ -139,7 +163,29 @@ class _HomePageState extends State<HomePage> {
                   const Text(
                     'Munting Paraiso Foodpark',
                     style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                  )
+                  ),
+                  const Text(
+                    'Address:',
+                    textAlign: TextAlign.right,
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const Text(
+                    '101 Arterial Rd, Bulakan, Bulacan',
+                    style: TextStyle(fontSize: 11),
+                  ),
+                  const SizedBox(
+                    height: 5.0,
+                  ),
+                  const Text('Contact no: ',
+                      style:
+                          TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
+                  const Text('',
+                      style: TextStyle(
+                        fontSize: 11,
+                      ))
                 ],
               ),
             ),
@@ -179,7 +225,32 @@ class _HomePageState extends State<HomePage> {
                   const Text(
                     'The Mill: Pulilan Foodpark',
                     style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                  )
+                  ),
+                  const Text(
+                    'Address:',
+                    textAlign: TextAlign.right,
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 15, right: 8.0),
+                    child: Text(
+                      'WR2W+WWH, Regional Road, Pulilan, Bulacan',
+                      style: TextStyle(fontSize: 11),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 5.0,
+                  ),
+                  const Text('Contact no: ',
+                      style:
+                          TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
+                  const Text('0998-562-6400',
+                      style: TextStyle(
+                        fontSize: 11,
+                      ))
                 ],
               ),
             ),
@@ -219,7 +290,29 @@ class _HomePageState extends State<HomePage> {
                   const Text(
                     'San Miguel Foodpark',
                     style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                  )
+                  ),
+                  const Text(
+                    'Address:',
+                    textAlign: TextAlign.right,
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const Text(
+                    'San Miguel Purok7 Hagonoy Bulacan',
+                    style: TextStyle(fontSize: 11),
+                  ),
+                  const SizedBox(
+                    height: 5.0,
+                  ),
+                  const Text('Contact no: ',
+                      style:
+                          TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
+                  const Text('0923-416-7121',
+                      style: TextStyle(
+                        fontSize: 11,
+                      ))
                 ],
               ),
             ),
@@ -259,7 +352,36 @@ class _HomePageState extends State<HomePage> {
                   const Text(
                     'Garaje Foodpark',
                     style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                  )
+                  ),
+                  const SizedBox(
+                    height: 5.0,
+                  ),
+                  const Text(
+                    'Address:',
+                    textAlign: TextAlign.right,
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 8.0, right: 8.0),
+                    child: Text(
+                      'Garaje Food Park, Bagong Bayan, City of Malolos Bulacan'
+                      '(fronting Bulacan Sports Complex, near Marcelo H. del Pilar National High School)',
+                      style: TextStyle(fontSize: 11),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 5.0,
+                  ),
+                  const Text('Contact no: ',
+                      style:
+                          TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
+                  const Text('0927-154-2895',
+                      style: TextStyle(
+                        fontSize: 11,
+                      ))
                 ],
               ),
             ),
@@ -299,7 +421,38 @@ class _HomePageState extends State<HomePage> {
                   const Text(
                     'Crossroads Foodpark',
                     style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                  )
+                  ),
+                  const SizedBox(
+                    height: 5.0,
+                  ),
+                  // ignore: prefer_const_constructors
+                  Text(
+                    'Address:',
+                    //textAlign: TextAlign.right,
+                    style: const TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 8.0, right: 8.0),
+                    child: Text(
+                      'VR38+4FR, A Mabini, Malolos, 3000 Bulacan',
+                      style: TextStyle(fontSize: 11),
+                    ),
+                  ),
+
+                  const SizedBox(
+                    height: 5.0,
+                  ),
+
+                  const Text('Contact no: ',
+                      style:
+                          TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
+                  const Text('0927-154-2895',
+                      style: TextStyle(
+                        fontSize: 11,
+                      ))
                 ],
               ),
             ),
